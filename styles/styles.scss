@@ -1,0 +1,193 @@
+// declaring variable
+$primaryColor: #f09d51;
+$mainBlack: #222;
+$mainWhite: #fff;
+$mainGrey: #ececec;
+$mainSpacing: 0.1rem;
+$mainTransition: all 0.3s linear;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $mainBlack;
+  background: $mainWhite;
+  font-family: "Lato" sans-serif;
+}
+
+// mixin declaration
+@mixin flex-box($justify-content, $align-items) {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content:$justify-content;
+  align-items: $align-items;
+}
+
+@mixin hover-class {
+  background: $primaryColor;
+  border-bottom: .1rem solid $mainBlack;
+}
+
+// header
+.header {
+  position: sticky;
+  top: 0;
+  background: $mainGrey;
+  position: relative;
+  .top-nav {
+    @include flex-box(space-evenly, center);
+    padding: 1rem 0;
+  }
+
+  .nav-icon {
+    display: none;
+  }
+
+  .search-box {
+    width: 30%;
+    input {
+      width: 75%;
+      display: inline-block;
+      width: 80%;
+      width: 75%;
+      padding: .5rem;
+    }
+    button {
+      display: inline-block;
+      text-transform: capitalize;
+      padding: .5rem;
+      font-weight: 500;
+      background: $primaryColor;
+      border: 2px solid $primaryColor;
+      cursor: pointer;
+    }
+  }
+
+  .cart-btn {
+    position: relative;
+    cursor: pointer;
+    .cart-icon {
+      font-size: 2rem;
+    }
+    .cart-items {
+      position: absolute;
+      top: -.1rem;
+      right: .25rem;
+      padding: 0 .25rem;
+      color: $mainWhite;
+      background: $primaryColor;
+      border-radius: .3rem;
+    }
+  }
+
+  .small-search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 2rem;
+    padding: 1rem .5rem;
+    display: none;
+    transition: $mainTransition;
+    &:hover {
+      @include hover-class();
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .search-box {
+      display: none;
+    }
+    .nav-icon {
+      display: inline-block;
+    }
+    .small-search {
+      display: inline-block;
+    }
+  }
+}
+// end of header
+// small search box
+.small-search-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  transition: $mainTransition;
+  transform: translateX(100%  );
+  input {
+    padding: .75rem;
+  }
+
+  .showSearchBox {
+    transform: translateX(0);
+  }
+}
+// end of small search box
+// navigation bar
+.navbar {
+  @include flex-box(center, center);
+  text-transform: capitalize;
+  list-style: none;
+  letter-spacing: $mainSpacing;
+  font-size: 1.25rem;
+  font-weight: 500;
+  .nav-link {
+    display: inline-block;
+    padding: 1rem 5rem;
+    transition: $mainTransition;
+    cursor: pointer;
+    &:hover {
+      @include hover-class();
+      border-bottom: none;
+    }
+  }
+}
+// end of navigation bar
+// herro
+.hero {
+ background: {
+  image: url("../images/hero-bcg.jpeg");
+  size: cover;
+  position: center;
+  repeat: no-repeat;
+ }
+ height: 80vh;
+ width: 100%;
+ @include flex-box(center, center);
+ .banner {
+   @include flex-box(center, center);
+   flex-direction: column;
+   background: rgba(255, 255, 255, 0.8);
+   padding: 2rem;
+ }
+
+ .banner-title {
+  color: $mainBlack;
+  letter-spacing: $mainSpacing;
+  text-transform: uppercase;
+  font-size: 3.4rem;
+  margin-bottom: 3rem;
+ }
+
+ .banner-btn {
+  text-align: center;
+  padding: 1rem 3rem;
+  color: $mainBlack;
+  letter-spacing: $mainSpacing;
+  text-transform: uppercase;
+  background: $primaryColor;
+  border: .1rem solid $primaryColor;
+  cursor: pointer;
+  font-weight: 500;
+  transition: $mainTransition;
+  &:hover {
+    color: $primaryColor;
+    background: transparent;
+  }
+ }
+}
+// end of hero
+
