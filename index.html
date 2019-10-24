@@ -29,17 +29,19 @@
         <div class="cart-items">0</div>
       </div>
     </div>
-    <div class="small-search">
-      <i class="fas fa-search"></i>
-    </div>
   </header>
-  <!-- end of header -->
   <!-- small screen search box -->
-  <div class="small-search-box">
-    <input type="text" placeholder="Search items ...">
+  <div class="search-box-fluid">
+    <form class="search-box">
+      <input type="text" placeholder="Search items ...">
+      <button>search</button>
+    </form>
   </div>
   <!-- end of small screen search box -->
+  <!-- end of header -->
+
   <!-- navigation bar -->
+  <!-- large screen -->
   <nav>
     <ul class="navbar">
       <li class="nav-item"><a class="nav-link">italy</a></li>
@@ -47,7 +49,21 @@
       <li class="nav-item"><a class="nav-link">danemark</a></li>
     </ul>
   </nav>
-   <!--end of navigation bar -->
+  <!-- end of large screen -->
+  <!-- smaller screen -->
+  <nav class="vertical-navbar">
+    <span class="close-nav-btn">
+      <i class="fas fa-window-close"></i>
+    </span>
+    <ul>
+      <li class="nav-item"><a class="nav-link">italy</a></li>
+      <li class="nav-item"><a class="nav-link">france</a></li>
+      <li class="nav-item"><a class="nav-link">danemark</a></li>
+    </ul>
+  </nav>
+  <!-- end of smaller screen -->
+  <!--end of navigation bar -->
+
   <!-- hero -->
   <section class="hero">
     <div class="banner">
@@ -58,5 +74,74 @@
     </div>
   </section>
   <!-- end of hero -->
+
+  <!-- cart -->
+  <div class="cart-bg">
+    <div class="cart">
+      <span class="close-cart-btn">
+        <i class="fas fa-window-close"></i>
+      </span>
+      <h1>your cart</h1>
+      <div class="cart-content">
+        <!-- cart item -->
+        <div class="cart-item">
+          <img src="./images/product-1.jpeg" alt="item image" class="cart-item-img">
+          <div class="cart-item-info">
+            <h2 class="cart-item-title">comfyhouse</h2>
+            <p>$12.99</p>
+            <p class="remove-item">remove</p>
+          </div>
+          <div class="item-amount">
+            <i class="fas fa-chevron-up"></i>
+            <p>1</p>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+        <!-- end of cart item -->
+        <div class="cart-total">
+          <h2>your total: $ 0</h1>
+          <button class="clear-cart-btn">clear cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- cart -->
+  <!-- display items -->
+  <section class="products">
+    <div class="section-title">
+      <h2>our products</h2>
+    </div>
+    <div class="product-center">
+      <!-- single product -->
+      <article class="product">
+        <div class="img-container">
+          <img src="./images/product-1.jpeg" alt="product" class="product-img">
+          <button class="add-to-cart-btn">
+            <i class="fas fa-shopping-cart"></i>
+            add to cart
+          </button>
+        </div>
+        <h3>queen bed</h2>
+        <h4>$ 12.99</h3>
+      </article>
+      <!-- end of single product -->
+    </div>
+  </section>
+  <!-- end of display items -->
+
+  <!-- footer -->
+  <footer>
+    <div>
+      <h4>contact us</h4>
+      <p>Address: 75C, Binh Chieu ward, Thu Duc Dis, HCM city</p>
+      <p>Phone: 0353 860 797</p>
+      <p>Email: thachdong270293@gmail.com</p>
+    </div>
+    <div>
+      <h4>our social media</h4>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </footer>
+  <!-- end of footer -->
 </body>
 </html>
